@@ -9,4 +9,4 @@ a ros package of a dog gait sumulation
 ![Image2](https://github.com/Mlahoud/dog_simulation/blob/master/media/rviz_screenshot_2019_11_28-01_19_37.png)
 
 
-![Image3](https://github.com/Mlahoud/dog_simulation/blob/master/media/rviz_screenshot_2019_11_28-01_19_46.png)
+![Image3](https://github.com/Mlahoud/dog_simulation/blob/master/media/rviz_screenshot_2019_11_28-01_18_46.png)
