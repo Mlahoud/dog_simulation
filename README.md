@@ -1,6 +1,9 @@
 # dog_simulation
 a ros package of a dog gait sumulation
 
+
+![gif](https://github.com/Mlahoud/dog_simulation/blob/master/media/dog_simulation.gif)
+
 ![rqt_graph](https://github.com/Mlahoud/dog_simulation/blob/master/media/Screenshot%20from%202019-11-28%2002-05-10.png)
 
 ![Image1](https://github.com/Mlahoud/dog_simulation/blob/master/media/rviz_screenshot_2019_11_28-01_19_14.png)
