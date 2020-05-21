@@ -1,5 +1,5 @@
 # dog_simulation
-a ros package of a dog gait sumulation
+a ros package of a dog gait sumulation written in python
 
 <p align="center">
 <img src="https://github.com/Mlahoud/dog_simulation/blob/master/media/dog_simulation.gif">
