@@ -1,0 +1,9 @@
+<launch>
+<arg name="gui" default="False" />
+<param name="robot_description" textfile="$(find dog_simulation)/urdf/ros_dog.urdf" />
+<param name="use_gui" value="True"/>
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+<node name="rviz" pkg="rviz" type="rviz" args=" -d $(find dog_simulation)/launch/config.rviz" required="true" />
+<arg name="rvizconfig" default="$(find dog_simulation)/launch/rviz.rviz" />
+</launch>

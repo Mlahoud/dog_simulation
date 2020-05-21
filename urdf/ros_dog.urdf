@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<robot name="myfirst">
+<!--front leg-->
+  <material name="blue">
+    <color rgba="0 0 0.8 1"/>
+  </material>
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="2 0.1 0.25"/>
+      </geometry>
+      <material name="black"/>
+      <origin xyz="0 0 0.25"/>
+    </visual>
+  </link>
+
+  <link name="scapula">
+    <visual>
+      <geometry>
+        <box size="0.71 0.05 0.2"/>
+      </geometry>
+      <material name="blue"/>
+      <origin xyz="0.355 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_scapula" type="revolute">
+    <parent link="base_link"/>
+    <child link="scapula"/>
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" lower="-6.28" upper="6.28" velocity="0.5" />
+    <origin xyz="1 0 0.25"/>
+  </joint>
+  <link name="humerus">
+    <visual>
+      <geometry>
+        <box size="0.71 0.05 0.2"/>
+      </geometry>
+      <material name="white"/>
+      <origin xyz="0.355 0 0"/>
+    </visual>
+  </link>
+  <joint name="scapula_to_humerus" type="revolute">
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" lower="-6.28" upper="6.28" velocity="0.5" />
+    <parent link="scapula"/>
+    <child link="humerus"/>
+    <origin xyz="0.71 0 0"/>
+  </joint>
+  <link name="radius">
+    <visual>
+      <geometry>
+        <box size="0.71 0.05 0.2"/>
+      </geometry>
+      <material name="blue"/>
+      <origin xyz="0.355 0 0"/>
+    </visual>
+  </link>
+  <joint name="humerus_to_radius" type="revolute">
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" lower="-6.28" upper="6.28" velocity="0.5" />
+    <parent link="humerus"/>
+    <child link="radius"/>
+    <origin xyz="0.71 0 0"/>
+  </joint>
+  <link name="carpus">
+    <visual>
+      <geometry>
+        <box size="0.4 0.05 0.2"/>
+      </geometry>
+      <material name="white"/>
+      <origin xyz="0.2 0 0"/>
+    </visual>
+  </link>
+  <joint name="radius_to_carpus" type="revolute">
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" lower="-6.28" upper="6.28" velocity="0.5" />
+    <parent link="radius"/>
+    <child link="carpus"/>
+    <origin xyz="0.71 0 0"/>
+  </joint>
+  <link name="tip">
+    <visual>
+      <geometry>
+        <box size="0 0 0"/>
+      </geometry>
+      <material name="white"/>
+      <origin xyz="0.4 0 0"/>
+    </visual>
+  </link>
+  <joint name="tip_frame" type="fixed">
+    <parent link="carpus"/>
+    <child link="tip"/>
+    <origin xyz="0.4 0 0"/>
+  </joint>
+<!--hind leg-->
+  <link name="femur">
+    <visual>
+      <geometry>
+        <box size="0.55 0.05 0.2"/>
+      </geometry>
+      <material name="blue"/>
+      <origin xyz="0.275 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_femur" type="revolute">
+    <parent link="base_link"/>
+    <child link="femur"/>
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" lower="-6.28" upper="6.28" velocity="0.5" />
+    <origin xyz="-1 0 0.25"/>
+  </joint>
+  <link name="tibia">
+    <visual>
+      <geometry>
+        <box size="0.71 0.05 0.2"/>
+      </geometry>
+      <material name="white"/>
+      <origin xyz="0.355 0 0"/>
+    </visual>
+  </link>
+  <joint name="femur_to_tibia" type="revolute">
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" lower="-6.28" upper="6.28" velocity="0.5" />
+    <parent link="femur"/>
+    <child link="tibia"/>
+    <origin xyz="0.55 0 0"/>
+  </joint>
+  <link name="tarsus">
+    <visual>
+      <geometry>
+        <box size="0.71 0.05 0.2"/>
+      </geometry>
+      <material name="blue"/>
+      <origin xyz="0.355 0 0"/>
+    </visual>
+  </link>
+  <joint name="tibia_to_tarsus" type="revolute">
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" lower="-6.28" upper="6.28" velocity="0.5" />
+    <parent link="tibia"/>
+    <child link="tarsus"/>
+    <origin xyz="0.71 0 0"/>
+  </joint>
+  <link name="phalange">
+    <visual>
+      <geometry>
+        <box size="0.4 0.05 0.2"/>
+      </geometry>
+      <material name="white"/>
+      <origin xyz="0.2 0 0"/>
+    </visual>
+  </link>
+  <joint name="tarsus_to_phalange" type="revolute">
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" lower="-6.28" upper="6.28" velocity="0.5" />
+    <parent link="tarsus"/>
+    <child link="phalange"/>
+    <origin xyz="0.71 0 0"/>
+  </joint>
+  <link name="h_tip">
+    <visual>
+      <geometry>
+        <box size="0 0 0"/>
+      </geometry>
+      <material name="white"/>
+      <origin xyz="0.4 0 0"/>
+    </visual>
+  </link>
+  <joint name="htip_frame" type="fixed">
+    <parent link="phalange"/>
+    <child link="h_tip"/>
+    <origin xyz="0.4 0 0"/>
+  </joint>
+</robot>
